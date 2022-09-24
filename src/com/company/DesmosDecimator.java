@@ -14,7 +14,7 @@ import java.util.Scanner;
 public class DesmosDecimator {
 
     static StringBuffer stringBufferOfData = new StringBuffer();
-    static String filename = "src/com/company/DesmosDecimator/functions.txt";
+    static String filename = "src/com/company/functions.txt";
     // static Scanner sc = new Scanner(System.in);
     static CaptureParser brder = new CaptureParser();
 
@@ -95,7 +95,7 @@ public class DesmosDecimator {
 
     }
 
-    public static void Coords(BufferedImage img) {
+    public static ArrayList<Integer> Coords(BufferedImage img) {
         int count = 0;
 
         for (int i = 0; i < CaptureParser.height; i++) {
@@ -105,15 +105,15 @@ public class DesmosDecimator {
                 Color c = new Color(img.getRGB(i, j));
                 if ((c.getRed() > 0 && c.getRed() < 40) && (c.getGreen() > 0 && c.getGreen() < 40) && (c.getBlue() > 0 && c.getBlue() < 40)) {
                     xCoords.add(j);
-                    yCoords.add(i);
-                    System.out.println("S.No: " + count + " Red: " + c.getRed() + "  Green: " + c.getGreen() + " Blue: " + c.getBlue());
+                    //yCoords.add(i);
+                    //System.out.println("S.No: " + count + " Red: " + c.getRed() + "  Green: " + c.getGreen() + " Blue: " + c.getBlue());
 
                 }
-                System.out.println(xCoords+","+yCoords);
+                //System.out.println(xCoords+","+yCoords);
 
             }
         }
-
+        return xCoords;
     }
     /*
     public static int[] returnTesting(ArrayList xCoords, ArrayList yCoords){
